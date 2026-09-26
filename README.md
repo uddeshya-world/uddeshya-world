@@ -122,7 +122,7 @@ Uddeshya Kumar · Preprint, Zenodo, Sep 2026 (self-published, not peer-reviewed)
 
 | Role | Organization | Highlights |
 |---|---|---|
-| **Information Security Specialist** · Mar 2026 – present | [Itron](https://www.itron.com) · Bengaluru | Technical lead for the Agentic OS security foundation. Built the AI-native SDLC copilot (Electron + FastAPI). |
+| **Information Security Specialist** · Mar 2026 – present | [Itron](https://www.itron.com) · Bengaluru | Technical lead for the Agentic OS security foundation.|
 | **Technical Product Manager** · ~4 years | [SecLogic](https://seclogic.ai) | Built **CyberQ Shield**. |
 
 **Education:** B.Tech, Electronics & Communication Engineering, Cochin University of Science and Technology (CUSAT)
