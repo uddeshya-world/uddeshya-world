@@ -1,4 +1,4 @@
-<h1 align="center">Uddeshya Kumar</h1>
+<h1 align="center">Uddeshya</h1>
 
 <p align="center">
   <b>AI Security Engineer · LLM &amp; Agent Security Researcher · Builder</b><br/>
