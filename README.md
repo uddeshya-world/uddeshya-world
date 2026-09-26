@@ -18,7 +18,7 @@ I'm an AI security engineer in Bengaluru with ~4.5 years in **LLM and agent secu
 
 ### Currently
 
-- **Information Security Specialist at [Itron](https://www.itron.com)** (since Mar 2026). I'm the technical lead for the security foundation of Itron's **Agentic OS**.
+- **Information Security Specialist at [Itron](https://www.itron.com)** (since Mar 2026). I'm the technical lead and IC for the Application security .
 - Built an **AI-native SDLC copilot** at Itron: an Electron + FastAPI desktop app that moves a Unit of Work through **Shape → Plan → Build → Ship** and generates persona-specific documentation grounded in per-product knowledge-base packs. It's internal, so there's no public repo.
 - Researching **MESA (Modern Enterprise Security Architecture)**, an interaction-centric security model for multi-agent estates, and maintaining its reference scanner.
 - Open to **Singapore / APAC / remote** roles in AI security.
