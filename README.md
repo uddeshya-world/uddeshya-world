@@ -20,6 +20,7 @@ I'm an AI security engineer in Bengaluru with ~4.5 years in **LLM and agent secu
 
 - **Information Security Specialist at [Itron](https://www.itron.com)** (since Mar 2026). I'm the technical lead and IC for the Application security .
 - Researching **MESA (Modern Enterprise Security Architecture)**, an interaction-centric security model for multi-agent estates, and maintaining its reference scanner.
+- Building **[CyberRange](https://github.com/uddeshya-world/agentic-security-lab)**, MESA's hands-on lab: a deliberately vulnerable AI-agent range where you attack, defend and measure. **[Play the 15-minute version in your browser →](https://uddeshya-world.github.io/agentic-security-lab/)**
 - Open to **Singapore / APAC / remote** roles in AI security.
 
 ---
@@ -32,6 +33,23 @@ Uddeshya Kumar · Preprint, Zenodo, Sep 2026 (self-published, not peer-reviewed)
 - **Problem:** Zero Trust treats a *subject requesting a resource* as the basic unit of risk. In multi-agent systems, harm is often **compositional**. Actions that are each legitimate, taken by different agents on shared surfaces (package caches, public wikis, MCP registries, approval channels), can combine to close Willison's **lethal trifecta**: private data + untrusted content + external communication.
 - **Contribution:** **Invariant INV-01 (Ensemble Trifecta).** No agent may reach inbound closure of the full trifecta **by any path** unless a policy-decision-point gate cuts it.
 - **Code:** [`mesa-ibi-scanner`](https://github.com/uddeshya-world/mesa-ibi-scanner) is the reference implementation. It evaluates INV-01 over a typed agent/service interaction graph, takes schema-validated topology JSON, outputs text, JSON or SARIF, and returns CI-friendly exit codes. Tests run on Python 3.10–3.13. Current release: v0.3.2 (Apache-2.0). It's a research prototype, not a production enforcement tool.
+- **Hands-on:** [CyberRange](https://github.com/uddeshya-world/agentic-security-lab) teaches INV-01 by doing. Level 3 of its [browser playground](https://uddeshya-world.github.io/agentic-security-lab/) has three agents that each pass review alone and leak together; you find the policy cut that moves ensemble closure from `(1, 1, 1)` to `(1, 1, 0)` without breaking the service.
+
+---
+
+## Featured project: CyberRange
+
+<p align="center">
+  <a href="https://uddeshya-world.github.io/agentic-security-lab/"><img src="https://raw.githubusercontent.com/uddeshya-world/agentic-security-lab/master/docs/media/place-the-control.gif" alt="Place the Control: breach, control budget, composition cut" width="720"/></a>
+</p>
+
+**Everyone teaches you to break the agent. CyberRange makes you decide where the control goes, and proves it.**
+
+- **[Place the Control](https://uddeshya-world.github.io/agentic-security-lab/)**: a 15-minute, no-install browser playground. Watch a helpdesk agent leak six records, stop three attacks on a 3-point budget, find the composition cut, then catch a tool whose description lies. A **Reviewer** mode turns the result into questions officials should ask before approving an AI agent.
+- **[The full range](https://github.com/uddeshya-world/agentic-security-lab)** ("DVWA for AI agents"): a real LangGraph planner + executor, SQL / email / file tools, Chroma RAG and memory, running locally in Docker. 23 scenarios across Core, Persistence, Operate and Reviewer tracks, mapped to the **OWASP Top 10 for LLM Applications 2026** and **OWASP Agentic Top 10 (ASI01–ASI10)**. Every scenario runs attack → defend (`SECURE_MODE`) → measure, and graded checks read real lab state (rows dumped, mail intercepted, the control that fired), never exit codes.
+- **Honest by design:** synthetic data, ports bound to localhost, uncovered OWASP entries listed rather than hidden, and a self-hosted completion badge that is tamper-evident (signed from a server-side ledger), not third-party attested.
+
+<img src="https://img.shields.io/badge/Python-FastAPI%20%C2%B7%20LangGraph-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python, FastAPI, LangGraph"/> <img src="https://img.shields.io/badge/Docker-local%20range-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/> <img src="https://img.shields.io/badge/OWASP-LLM%202026%20%C2%B7%20ASI-000?style=flat-square&logo=owasp&logoColor=white" alt="OWASP LLM 2026 and ASI"/> <a href="https://uddeshya-world.github.io/agentic-security-lab/"><img src="https://img.shields.io/badge/Play-in%20your%20browser-2ea44f?style=flat-square" alt="Play in your browser"/></a>
 
 ---
 
@@ -39,6 +57,7 @@ Uddeshya Kumar · Preprint, Zenodo, Sep 2026 (self-published, not peer-reviewed)
 
 | Project | What it is | Stack |
 |---|---|---|
+| [**CyberRange**](https://github.com/uddeshya-world/agentic-security-lab) | Deliberately vulnerable AI-agent security range: attack a real agent stack, build the control, prove it with graded checks against live lab state. Includes a public [browser playground](https://uddeshya-world.github.io/agentic-security-lab/) with a Reviewer mode for officials. | Python (FastAPI, LangGraph) · Chroma · Docker · vanilla JS |
 | [**mesa-ibi-scanner**](https://github.com/uddeshya-world/mesa-ibi-scanner) | Reference scanner for MESA INV-01. It flags agents whose inbound interaction paths close the lethal trifecta without a gated cut, and emits SARIF for CI pipelines. | Python · JSON Schema · GitHub Actions |
 | [**Mnemosyne**](https://github.com/uddeshya-world/Mnemosyne) | Stateful LLM firewall. A Rust sidecar proxy scores every chat-completion prompt with a small online-learning neural memory (a "surprise" score) and blocks anomalies with HTTP 403. Includes a dashboard. The eBPF/XDP data path is still in progress: it passes all traffic today, and enforcement happens at the proxy. | Rust (Axum, Aya) · Python (FastAPI, PyTorch) · Docker |
 | [**Kidon**](https://github.com/uddeshya-world/-kidon-security) | Security CLI for AI agents. `scan` checks for hardcoded secrets and runs OSV.dev dependency checks. `guard` runs an eBPF execve process guard (network guard is experimental). `strike` sends jailbreak and red-team probes at an agent endpoint, optionally generated by a local model via Ollama. Also produces HTML reports. | Go · Cilium eBPF · C · Bubble Tea |
